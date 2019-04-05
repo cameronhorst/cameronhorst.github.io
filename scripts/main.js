@@ -25,6 +25,12 @@ function init() {
     document.body.appendChild( renderer.domElement );
     //
     window.addEventListener( 'resize', onWindowResize, false );
+    const id = setTimeout(() => alert('Enable device orientation in Settings > Safari > Motion & Orientation Access.'), 500);
+
+    window.addEventListener('deviceorientation', event => {
+        clearTimeout(id);
+        // ...
+    });
 
     drawVersion();
 }
