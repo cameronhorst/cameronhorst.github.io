@@ -53,7 +53,8 @@ function animate() {
     window.requestAnimationFrame( animate );
     controls.update();
     renderer.render( scene, camera );
-    document.getElementById("100").innerHTML = "v3:    " + JSON.stringify(camera.getWorldDirection());
+    var eularAngles = {x: THREE.Math.radToDeg(camera.rotation.x), y: THREE.Math.radToDeg(camera.rotation.y), z: THREE.Math.radToDeg(camera.rotation.z)};
+    document.getElementById("100").innerHTML = "v3:    " + JSON.stringify(eularAngles);
 }
 
 function onWindowResize() {
