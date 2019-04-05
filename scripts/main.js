@@ -53,7 +53,7 @@ function animate() {
     window.requestAnimationFrame( animate );
     controls.update();
     renderer.render( scene, camera );
-    document.getElementById("100").innerHTML = "v3:    " + JSON.stringify(camera.rotation);
+    document.getElementById("100").innerHTML = "v3:    " + JSON.stringify(controls.deviceOrientation);
 }
 
 function onWindowResize() {
