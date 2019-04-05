@@ -31,6 +31,7 @@ function init() {
 
     window.addEventListener('deviceorientation', event => {
         clearTimeout(id);
+        drawInfo();
         // ...
     });
 }
@@ -42,7 +43,7 @@ function createInfo()
     text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
     text2.style.width = 100;
     text2.style.height = 100;
-    text2.innerHTML = "v3:    " + JSON.stringify(camera.rotation);
+    text2.innerHTML = "v3:    " ;
     text2.style.top = 100 + 'px';
     text2.style.left = 0 + 'px';
     document.body.appendChild(text2);
@@ -50,8 +51,7 @@ function createInfo()
 
 function drawInfo()
 {
-    var text2 = document.getElementByName('div');
-    text2.innerHTML = "v3:    " + JSON.stringify(camera.rotation);
+    document.getElementByName('div').innerHTML = "v3:    " + JSON.stringify(camera.rotation);
 }
 
 function animate() {
