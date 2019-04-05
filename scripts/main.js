@@ -26,6 +26,7 @@ function init() {
     //
     window.addEventListener( 'resize', onWindowResize, false );
 }
+
 function animate() {
     window.requestAnimationFrame( animate );
     controls.update();
