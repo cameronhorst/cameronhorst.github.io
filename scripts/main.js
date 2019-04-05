@@ -53,8 +53,22 @@ function animate() {
     window.requestAnimationFrame( animate );
     controls.update();
     renderer.render( scene, camera );
-    var eularAngles = {x: THREE.Math.radToDeg(camera.rotation.x), y: THREE.Math.radToDeg(camera.rotation.y), z: THREE.Math.radToDeg(camera.rotation.z)};
+    var eularAngles = {x: THREE.Math.radToDeg(camera.rotation.x).toFixed(4), y: THREE.Math.radToDeg(camera.rotation.y).toFixed(4), z: THREE.Math.radToDeg(camera.rotation.z).toFixed(4)};
     document.getElementById("100").innerHTML = "v3:    " + JSON.stringify(eularAngles);
+}
+
+function toFixed(value, precision) {
+    var precision = precision || 0,
+        power = Math.pow(10, precision),
+        absValue = Math.abs(Math.round(value * power)),
+        result = (value < 0 ? '-' : '') + String(Math.floor(absValue / power));
+
+    if (precision > 0) {
+        var fraction = String(absValue % power),
+            padding = new Array(Math.max(precision - fraction.length, 0) + 1).join('0');
+        result += '.' + padding + fraction;
+    }
+    return result;
 }
 
 function onWindowResize() {
