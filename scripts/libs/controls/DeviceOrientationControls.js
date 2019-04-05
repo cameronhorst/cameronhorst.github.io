@@ -91,8 +91,8 @@ THREE.DeviceOrientationControls = function ( object ) {
 		text2.style.width = 100;
 		text2.style.height = 100;
 		text2.innerHTML = deviceOrientation;
-		text2.style.top = 0 + 'px';
-		text2.style.left = 0 + 'px';
+		text2.style.top = 100 + 'px';
+		text2.style.left = 100 + 'px';
 		document.body.appendChild(text2);
 	}
 
