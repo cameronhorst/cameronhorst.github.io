@@ -26,7 +26,7 @@ function init() {
     //
     window.addEventListener( 'resize', onWindowResize, false );
 
-    drawversion();
+    drawVersion();
 }
 
 function drawVersion()
