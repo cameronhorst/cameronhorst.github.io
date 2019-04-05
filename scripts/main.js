@@ -27,13 +27,15 @@ function init() {
     window.addEventListener( 'resize', onWindowResize, false );
     const id = setTimeout(() => alert('Enable device orientation in Settings > Safari > Motion & Orientation Access.'), 500);
 
+    createInfo();
+
     window.addEventListener('deviceorientation', event => {
         clearTimeout(id);
         // ...
     });
 }
 
-function drawInfo()
+function createInfo()
 {
     var text2 = document.createElement('div');
     text2.style.position = 'absolute';
@@ -44,6 +46,12 @@ function drawInfo()
     text2.style.top = 100 + 'px';
     text2.style.left = 0 + 'px';
     document.body.appendChild(text2);
+}
+
+function drawInfo()
+{
+    var text2 = document.getElementByName('div');
+    text2.innerHTML = "v3:    " + JSON.stringify(camera.rotation);
 }
 
 function animate() {
