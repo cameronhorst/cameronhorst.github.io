@@ -90,7 +90,7 @@ THREE.DeviceOrientationControls = function ( object ) {
 		//text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
 		text2.style.width = 100;
 		text2.style.height = 100;
-		text2.innerHTML = controls.deviceOrientation;
+		text2.innerHTML = deviceOrientation;
 		text2.style.top = 0 + 'px';
 		text2.style.left = 0 + 'px';
 		document.body.appendChild(text2);
