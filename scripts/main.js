@@ -29,16 +29,14 @@ function init() {
 
     createInfo();
 
-    window.addEventListener('deviceorientation', event => {
-        clearTimeout(id);
-        drawInfo();
-        // ...
-    });
+
+
 }
 
 function createInfo()
 {
     var text2 = document.createElement('div');
+    text2.setAttribute('id', "100");
     text2.style.position = 'absolute';
     text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
     text2.style.width = 100;
@@ -49,16 +47,13 @@ function createInfo()
     document.body.appendChild(text2);
 }
 
-function drawInfo()
-{
-    document.getElementByName('div').innerHTML = "v3:    " + JSON.stringify(camera.rotation);
-}
+
 
 function animate() {
     window.requestAnimationFrame( animate );
     controls.update();
     renderer.render( scene, camera );
-    drawInfo();
+    document.getElementById("100").innerHTML = "v3:    " + JSON.stringify(camera.rotation);
 }
 
 function onWindowResize() {
