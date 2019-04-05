@@ -64,8 +64,6 @@ THREE.DeviceOrientationControls = function ( object ) {
 		window.addEventListener( 'orientationchange', onScreenOrientationChangeEvent, false );
 		window.addEventListener( 'deviceorientation', onDeviceOrientationChangeEvent, false );
 
-		window.addEventListener( 'orientationchange', drawOrientationData, false );
-		window.addEventListener( 'deviceorientation', drawOrientationData, false );
 
 		scope.enabled = true;
 
@@ -76,25 +74,12 @@ THREE.DeviceOrientationControls = function ( object ) {
 		window.removeEventListener( 'orientationchange', onScreenOrientationChangeEvent, false );
 		window.removeEventListener( 'deviceorientation', onDeviceOrientationChangeEvent, false );
 
-		window.removeEventListener( 'orientationchange', drawOrientationData, false );
-		window.removeEventListener( 'deviceorientation', drawOrientationData, false );
 
 		scope.enabled = false;
 
 	};
 
-	var drawOrientationData = function()
-	{
-		var text2 = document.createElement('div');
-		text2.style.position = 'absolute';
-		//text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
-		text2.style.width = 100;
-		text2.style.height = 100;
-		text2.innerHTML = deviceOrientation;
-		text2.style.top = 100 + 'px';
-		text2.style.left = 100 + 'px';
-		document.body.appendChild(text2);
-	}
+	
 
 	this.update = function () {
 
